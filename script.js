@@ -1,10 +1,32 @@
 // Assignment Code
-// Variables here
 var generateBtn = document.querySelector("#generate");
 
 
 
+var passwordLength
 
+
+function createPassword() {
+
+  var establishLength = parseInt(prompt("How long would you like your password to be?(Between 8-128 characters)."));
+
+    if (passwordLength < 8) {
+      alert('Password must be at least 8 characters or longer');
+      establishLength();
+    } 
+    
+    else if (passwordLength > 128) {
+      alert('Password cannot exceed 128 characters')
+      establishLength();
+    }
+
+    else {
+      alert('Password length criteria has been met.')
+    }
+
+    return passwordLength();
+
+}
 
 
 
