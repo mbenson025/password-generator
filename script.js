@@ -3,10 +3,21 @@ var generateBtn = document.querySelector("#generate");
 
 
 var passLength;
+// 'use' variables will be booleans stating true or false
 let useCaps;
 let useLowers;
 let useNumbers;
 let useSpecials;
+
+//'char' variables will be used in a loop below to assign each character until established pass length is met
+// Use arrays for generating each character? maybe?? Return here when this doesn't work-------
+var charCaps: [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"  ];
+//there must be a better way to do this
+var charLowers: [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+var charNumbers: [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]
+//criteria doesn't mention ALL special characters. Leaving out annoying ones for now (double/single parentheses etc.)
+var charSpecials: [ "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~" ]
+
 
 function establishLength() {
   passLength = parseInt(prompt("How long would you like your password to be?."));
@@ -102,19 +113,19 @@ useSpecials = toLowerCase(prompt('Do you want special characters in your passwor
 
 
 
-// All 4 criteria chosen
+// Scenario: All 4 criteria chosen
 
 function createPassword() {
   let finalPassword = Math.floor(Math.random() * 4)
   switch (finalPassword) {
     case 0:
-      return useCaps
+      return charCaps
     case 1:
-      return useLowers
+      return charLowers
     case 2:
-      return useNumbers
+      return charNumbers
     case 3:
-      return useSpecials
+      return charSpecials
     
   }
 }
