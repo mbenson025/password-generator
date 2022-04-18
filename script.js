@@ -8,17 +8,17 @@ var passLength;
 
 function establishLength() {
 
-  passLength = parseInt(prompt("How long would you like your password to be?(Between 8-128 characters)."));
+  passLength = parseInt(prompt("How long would you like your password to be?."));
 
-    if (passLength < 8) {
-      alert('Password must be at least 8 characters or longer');
+    if (passLength < 8 || passlength > 128) {
+      alert('Password must be between 8 and 128 characters');
       establishLength();
     } 
     
-    else if (passLength > 128) {
-      alert('Password cannot exceed 128 characters')
-      establishLength();
-    }
+    // else if (passLength > 128) {
+    //   alert('Password cannot exceed 128 characters')
+    //   establishLength();
+    // }
 
     else {
       alert('Password length criteria accepted.')
@@ -27,6 +27,26 @@ function establishLength() {
     return passLength;
 
 }
+
+
+
+var confirmCaps
+
+confirmCaps = confirm('Do you want uppercase letters in your password?')
+
+var confirmLowers
+
+confirmLowers = confirm('Do you want lowercase letters in your password?')
+
+var confirmNumbers
+
+confirmNumbers = confirm('Do you want numbers in your password?')
+
+var confirmSpecials
+
+confirmSpecials = confirm('Do you want special characters in your password?')
+
+
 
 
 
