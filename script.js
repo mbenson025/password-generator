@@ -94,6 +94,34 @@ useSpecials = toLowerCase(prompt('Do you want special characters in your passwor
 
 
 
+//Going to try to work from the generated answer and go backwards ----delete this after----
+
+
+
+
+
+
+
+// All 4 criteria chosen
+
+function createPassword() {
+  let finalPassword = Math.floor(Math.random() * 4)
+  switch (finalPassword) {
+    case 0:
+      return useCaps
+    case 1:
+      return useLowers
+    case 2:
+      return useNumbers
+    case 3:
+      return useSpecials
+    
+  }
+}
+
+
+
+
 
 
 
