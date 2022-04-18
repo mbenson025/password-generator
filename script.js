@@ -2,7 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 
 
-var establishLength;
 var passLength;
 let useCaps;
 let useLowers;
@@ -10,7 +9,6 @@ let useNumbers;
 let useSpecials;
 
 function establishLength() {
-
   passLength = parseInt(prompt("How long would you like your password to be?."));
 
     if (passLength < 8 || passLength > 128) {
@@ -33,62 +31,65 @@ function establishLength() {
 
 
 
+function askCaps() {
+  useCaps = toLowerCase(prompt('Do you want uppercase letters in your password? Yes(Y) or No(N)')) {
+    if (useCaps === 'yes' || useCaps === 'y')
+    return useCaps = true;
 
-useCaps = toLowerCase(prompt('Do you want uppercase letters in your password? Yes(Y) or No(N)')) {
-  if (useCaps === 'yes' || useCaps === 'y')
-  return useCaps = true;
+  } else if (useCaps ==='no' || useCaps ==='n') {
+    return useCaps = false;
 
-} else if (useCaps ==='no' || useCaps ==='n') {
-  return useCaps = false;
-
-} else {
-  alert('Try Again');
-  useCaps();
+  } else {
+    alert('Try Again');
+    askCaps();
+  }
 }
 
 
+function askLowers() {
 useLowers = toLowerCase(prompt('Do you want lowercase letters in your password? Yes(Y) or No(N)')) {
-  if (useLowers === 'yes' || useLowers === 'y')
-    return useLowers = true;
+    if (useLowers === 'yes' || useLowers === 'y')
+      return useLowers = true;
 
 
-} else if (useLowers ==='no' || useLowers ==='n') {
-  return useLowers = false;
+  } else if (useLowers ==='no' || useLowers ==='n') {
+    return useLowers = false;
 
-} else {
-  alert('Try Again');
-  useLowers();
+  } else {
+    alert('Try Again');
+    askLowers();
+  }
 }
 
-
-
+function askNumbers() {
 useNumbers = toLowerCase(prompt('Do you want numbers in your password? Yes(Y) or No(N)')) {
-if (useNumbers === 'yes' || useNumbers === 'y')
-  return useNumbers = true;
+  if (useNumbers === 'yes' || useNumbers === 'y')
+    return useNumbers = true;
 
 
-} else if (useNumbers ==='no' || useNumbers ==='n') {
-return useNumbers = false;
+  } else if (useNumbers ==='no' || useNumbers ==='n') {
+  return useNumbers = false;
 
-} else {
-  alert('Try Again');
-  useNumbers();
+  } else {
+    alert('Try Again');
+    askNumbers();
+  }
 }
 
-
+function askSpecials() {
 useSpecials = toLowerCase(prompt('Do you want special characters in your password? Yes(Y) or No(N)')) {
-if (useSpecials === 'yes' || useSpecials === 'y')
-  return useSpecials = true;
+  if (useSpecials === 'yes' || useSpecials === 'y')
+    return useSpecials = true;
 
 
-} else if (useSpecials ==='no' || useSpecials ==='n') {
-  return useSpecials = false;
+  } else if (useSpecials ==='no' || useSpecials ==='n') {
+    return useSpecials = false;
 
-} else {
-  alert('Try Again');
-  useSpecials();
+  } else {
+    alert('Try Again');
+    askSpecials();
+  }
 }
-
 
 
 
