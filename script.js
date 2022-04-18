@@ -20,18 +20,13 @@ var charSpecials: [ "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", 
 
 
 function establishLength() {
-  passLength = parseInt(prompt("How long would you like your password to be?."));
+  var passLength = parseInt(prompt("How long would you like your password to be?."));
 
     if (passLength < 8 || passLength > 128) {
       alert('Password must be between 8 and 128 characters');
       establishLength();
     } 
     
-    // else if (passLength > 128) {
-    //   alert('Password cannot exceed 128 characters')
-    //   establishLength();
-    // }
-
     else {
       alert('Password length criteria accepted.')
     }
@@ -45,10 +40,12 @@ function establishLength() {
 function askCaps() {
   useCaps = toLowerCase(prompt('Do you want uppercase letters in your password? Yes(Y) or No(N)')) {
     if (useCaps === 'yes' || useCaps === 'y')
-    return useCaps = true;
+    useCaps = true;
+    return useCaps;
 
-  } else if (useCaps ==='no' || useCaps ==='n') {
-    return useCaps = false;
+  } if (useCaps ==='no' || useCaps ==='n') {
+    useCaps = false;
+    return useCaps
 
   } else {
     alert('Try Again');
@@ -60,11 +57,13 @@ function askCaps() {
 function askLowers() {
 useLowers = toLowerCase(prompt('Do you want lowercase letters in your password? Yes(Y) or No(N)')) {
     if (useLowers === 'yes' || useLowers === 'y')
-      return useLowers = true;
+      useLowers = true;
+      return useLowers;
 
 
-  } else if (useLowers ==='no' || useLowers ==='n') {
-    return useLowers = false;
+  } if (useLowers ==='no' || useLowers ==='n') {
+    useLowers = false;
+    return useLowers;
 
   } else {
     alert('Try Again');
@@ -75,11 +74,13 @@ useLowers = toLowerCase(prompt('Do you want lowercase letters in your password? 
 function askNumbers() {
 useNumbers = toLowerCase(prompt('Do you want numbers in your password? Yes(Y) or No(N)')) {
   if (useNumbers === 'yes' || useNumbers === 'y')
-    return useNumbers = true;
+    useNumbers = true;
+    return useNumbers;
 
 
-  } else if (useNumbers ==='no' || useNumbers ==='n') {
-  return useNumbers = false;
+  } if (useNumbers ==='no' || useNumbers ==='n') {
+  useNumbers = false;
+  return useNumbers;
 
   } else {
     alert('Try Again');
@@ -90,11 +91,13 @@ useNumbers = toLowerCase(prompt('Do you want numbers in your password? Yes(Y) or
 function askSpecials() {
 useSpecials = toLowerCase(prompt('Do you want special characters in your password? Yes(Y) or No(N)')) {
   if (useSpecials === 'yes' || useSpecials === 'y')
-    return useSpecials = true;
+    useSpecials = true;
+    return useSpecials;
 
 
-  } else if (useSpecials ==='no' || useSpecials ==='n') {
-    return useSpecials = false;
+  } if (useSpecials ==='no' || useSpecials ==='n') {
+    useSpecials = false;
+    return useSpecials
 
   } else {
     alert('Try Again');
@@ -105,7 +108,19 @@ useSpecials = toLowerCase(prompt('Do you want special characters in your passwor
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 //Going to try to work from the generated answer and go backwards ----delete this after----
+//arrays created above to correspond to potential character chooser below
 
 
 
@@ -114,9 +129,11 @@ useSpecials = toLowerCase(prompt('Do you want special characters in your passwor
 
 
 // Scenario: All 4 criteria chosen
+let randomPassword = 0;
+while (randomPassword < passlength)
 
-function createPassword() {
-  let finalPassword = Math.floor(Math.random() * 4)
+function randomPassword() {
+  let finalPassword = (Math.floor(Math.random() * 4) * passLength)
   switch (finalPassword) {
     case 0:
       return charCaps
@@ -131,6 +148,11 @@ function createPassword() {
 }
 
 
+
+
+
+// for loop to put password together-
+for (var i = 0, i < passLength, i++)
 
 
 
