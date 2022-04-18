@@ -4,13 +4,16 @@ var generateBtn = document.querySelector("#generate");
 
 var establishLength;
 var passLength;
-
+let useCaps;
+let useLowers;
+let useNumbers;
+let useSpecials;
 
 function establishLength() {
 
   passLength = parseInt(prompt("How long would you like your password to be?."));
 
-    if (passLength < 8 || passlength > 128) {
+    if (passLength < 8 || passLength > 128) {
       alert('Password must be between 8 and 128 characters');
       establishLength();
     } 
@@ -30,21 +33,61 @@ function establishLength() {
 
 
 
-var confirmCaps
 
-confirmCaps = confirm('Do you want uppercase letters in your password?')
+useCaps = toLowerCase(prompt('Do you want uppercase letters in your password? Yes(Y) or No(N)')) {
+  if (useCaps === 'yes' || useCaps === 'y')
+  return useCaps = true;
 
-var confirmLowers
+} else if (useCaps ==='no' || useCaps ==='n') {
+  return useCaps = false;
 
-confirmLowers = confirm('Do you want lowercase letters in your password?')
+} else {
+  alert('Try Again');
+  useCaps();
+}
 
-var confirmNumbers
 
-confirmNumbers = confirm('Do you want numbers in your password?')
+useLowers = toLowerCase(prompt('Do you want lowercase letters in your password? Yes(Y) or No(N)')) {
+  if (useLowers === 'yes' || useLowers === 'y')
+    return useLowers = true;
 
-var confirmSpecials
 
-confirmSpecials = confirm('Do you want special characters in your password?')
+} else if (useLowers ==='no' || useLowers ==='n') {
+  return useLowers = false;
+
+} else {
+  alert('Try Again');
+  useLowers();
+}
+
+
+
+useNumbers = toLowerCase(prompt('Do you want numbers in your password? Yes(Y) or No(N)')) {
+if (useNumbers === 'yes' || useNumbers === 'y')
+  return useNumbers = true;
+
+
+} else if (useNumbers ==='no' || useNumbers ==='n') {
+return useNumbers = false;
+
+} else {
+  alert('Try Again');
+  useNumbers();
+}
+
+
+useSpecials = toLowerCase(prompt('Do you want special characters in your password? Yes(Y) or No(N)')) {
+if (useSpecials === 'yes' || useSpecials === 'y')
+  return useSpecials = true;
+
+
+} else if (useSpecials ==='no' || useSpecials ==='n') {
+  return useSpecials = false;
+
+} else {
+  alert('Try Again');
+  useSpecials();
+}
 
 
 
