@@ -1,178 +1,177 @@
 // Assignment Code
+// STRING INSTEAD OF ARRAY VERSION
+
 var generateBtn = document.querySelector("#generate");
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
+//each group of possible characters is written as a string to define an "index" to draw from
+var charCaps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
+var charLowers = "abcdefghijklmnopqrstuvwxyz";
+var charNumbers = "0123456789";
+//special character selection taken from owasp.org password "special characters list"
+var charSpecials = "!#$%&()*+-:;^_|`',./{}=<>?@~";
+var passReqs = "";
+var passLength = 0;
+var passFinish = "";
 
-var passLength;
-// 'use' variables will be booleans stating true or false
-let useCaps;
-let useLowers;
-let useNumbers;
-let useSpecials;
-
-//'char' variables will be used in a loop below to assign each character until established pass length is met
-// Use arrays for generating each character? maybe?? Return here when this doesn't work-------
-var charCaps: [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"  ];
-//there must be a better way to do this
-var charLowers: [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-var charNumbers: [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]
-//criteria doesn't mention ALL special characters. Leaving out annoying ones for now (double/single parentheses etc.)
-var charSpecials: [ "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~" ]
-
-
-function establishLength() {
-  var passLength = parseInt(prompt("How long would you like your password to be?."));
-
-    if (passLength < 8 || passLength > 128) {
-      alert('Password must be between 8 and 128 characters');
-      establishLength();
-    } 
-    
-    else {
-      alert('Password length criteria accepted.')
-    }
-
-    return passLength;
-
-}
-
-
-
-function askCaps() {
-  useCaps = toLowerCase(prompt('Do you want uppercase letters in your password? Yes(Y) or No(N)')) {
-    if (useCaps === 'yes' || useCaps === 'y')
-    useCaps = true;
-    return useCaps;
-
-  } if (useCaps ==='no' || useCaps ==='n') {
-    useCaps = false;
-    return useCaps
-
-  } else {
-    alert('Try Again');
-    askCaps();
-  }
-}
-
-
-function askLowers() {
-useLowers = toLowerCase(prompt('Do you want lowercase letters in your password? Yes(Y) or No(N)')) {
-    if (useLowers === 'yes' || useLowers === 'y')
-      useLowers = true;
-      return useLowers;
-
-
-  } if (useLowers ==='no' || useLowers ==='n') {
-    useLowers = false;
-    return useLowers;
-
-  } else {
-    alert('Try Again');
-    askLowers();
-  }
-}
-
-function askNumbers() {
-useNumbers = toLowerCase(prompt('Do you want numbers in your password? Yes(Y) or No(N)')) {
-  if (useNumbers === 'yes' || useNumbers === 'y')
-    useNumbers = true;
-    return useNumbers;
-
-
-  } if (useNumbers ==='no' || useNumbers ==='n') {
-  useNumbers = false;
-  return useNumbers;
-
-  } else {
-    alert('Try Again');
-    askNumbers();
-  }
-}
-
-function askSpecials() {
-useSpecials = toLowerCase(prompt('Do you want special characters in your password? Yes(Y) or No(N)')) {
-  if (useSpecials === 'yes' || useSpecials === 'y')
-    useSpecials = true;
-    return useSpecials;
-
-
-  } if (useSpecials ==='no' || useSpecials ==='n') {
-    useSpecials = false;
-    return useSpecials
-
-  } else {
-    alert('Try Again');
-    askSpecials();
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Going to try to work from the generated answer and go backwards ----delete this after----
-//arrays created above to correspond to potential character chooser below
-
-
-
-
-
-
-
-// Scenario: All 4 criteria chosen
-let randomPassword = 0;
-while (randomPassword < passlength)
-
-function randomPassword() {
-  let finalPassword = (Math.floor(Math.random() * 4) * passLength)
-  switch (finalPassword) {
-    case 0:
-      return charCaps
-    case 1:
-      return charLowers
-    case 2:
-      return charNumbers
-    case 3:
-      return charSpecials
-    
-  }
-}
-
-
-
-
-
-// for loop to put password together-
-for (var i = 0, i < passLength, i++)
-
-
-
-
-
-
-
-
+//keeping array version here to easily switch back from string version
+// var charCaps = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"  ];
+// var charLowers = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+// var charNumbers = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]
+// var charSpecials = [ "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~" ]
+// var passReqs = [];
 
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
+passwordText.value = password;
+}
 
-  passwordText.value = password;
+
+
+function generatePassword() {
+    //user defines password length
+    var passLength = prompt("How long would you like your password to be?");
+    if (passLength < 8 || passLength > 128) {
+
+        alert('Password must be between 8 and 128 characters');
+      // generatePassword(); -->I found this annoying as a user choice(unable to close out of box)
+        return passLength;
+    } 
+
+    else {
+            var useCaps = confirm('Do you want uppercase letters in your password?');
+            var useLowers = confirm('Do you want lowercase letters in your password?');
+            var useNumbers = confirm('Do you want numbers in your password?');
+            var useSpecials = confirm('Do you want special characters in your password?');
+
+            if ((useCaps === false) && (useLowers === false) && (useNumbers === false) && (useSpecials === false)) {
+                alert('At least one of the password criteria must be chosen.');
+              //generatePassword() sends the user back to first prompt to try again
+                generatePassword();
+            }
+            //each selected criteria adds the "index" string of characters for each of the 4 categories
+            //Note:PUSH for arrays and concat or "+" for strings--choose and stick with one--
+            if (useCaps === true) {
+                passReqs = passReqs.concat(charCaps)
+            }
+            
+            //.concat combines the strings
+            if (useLowers === true) {
+                passReqs = passReqs.concat(charLowers)
+            }
+            
+
+            if (useNumbers === true) {
+                passReqs = passReqs.concat(charNumbers)
+            }
+            
+            if (useSpecials === true) {
+                passReqs = passReqs.concat(charSpecials)
+
+                console.log(passReqs)
+
+            }
+          }
+            //new index is created after any of the 4 combined
+
+
+
+//loop is made to keep re-adding a character from the new index until the user password length input is met
+for (var i = 0; i < passLength; i++ ) {
+
+
+//charAt returns a character from the resulting index --- link in readme to stackoverflow I found charAt solution ---
+//index is randomized by (math.floor(Math.random())
+  passFinish = passFinish + passReqs.charAt( Math.floor(Math.random() * (passReqs.length)));
+
+  console.log(passFinish)
+    }
+
+    // debugger;
+
+    //final password solution output
+    return passFinish;
 
 }
 
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+// if (useCaps ==== true && useLowers === true && useNumbers === true && useSpecials === true)
+
+
+
+
+// function askCaps() {
+//   useCaps = toLowerCase(prompt('Do you want uppercase letters in your password? Yes(Y) or No(N)')) {
+//     if (useCaps === 'yes' || useCaps === 'y')
+//     useCaps = true;
+//     return useCaps;
+
+//   } if (useCaps ==='no' || useCaps ==='n') {
+//     useCaps = false;
+//     return useCaps
+
+//   } else {
+//     alert('Try Again');
+//     askCaps();
+//   }
+// }
+
+
+// function askLowers() {
+// useLowers = toLowerCase(prompt('Do you want lowercase letters in your password? Yes(Y) or No(N)')) {
+//     if (useLowers === 'yes' || useLowers === 'y')
+//       useLowers = true;
+//       return useLowers;
+
+
+//   } if (useLowers ==='no' || useLowers ==='n') {
+//     useLowers = false;
+//     return useLowers;
+
+//   } else {
+//     alert('Try Again');
+//     askLowers();
+//   }
+// }
+
+// function askNumbers() {
+// useNumbers = toLowerCase(prompt('Do you want numbers in your password? Yes(Y) or No(N)')) {
+//   if (useNumbers === 'yes' || useNumbers === 'y')
+//     useNumbers = true;
+//     return useNumbers;
+
+
+//   } if (useNumbers ==='no' || useNumbers ==='n') {
+//   useNumbers = false;
+//   return useNumbers;
+
+//   } else {
+//     alert('Try Again');
+//     askNumbers();
+//   }
+// }
+
+// function askSpecials() {
+// useSpecials = toLowerCase(prompt('Do you want special characters in your password? Yes(Y) or No(N)')) {
+//   if (useSpecials === 'yes' || useSpecials === 'y')
+//     useSpecials = true;
+//     return useSpecials;
+
+
+//   } if (useSpecials ==='no' || useSpecials ==='n') {
+//     useSpecials = false;
+//     return useSpecials
+
+//   } else {
+//     alert('Try Again');
+//     askSpecials();
+//   }
+// }
+
+
