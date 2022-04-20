@@ -52,7 +52,7 @@ THEN the password is either displayed in an alert or written to the page
 stackoverflow question/solution that gave me the charAt() function solution:
 https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
 
-Helpful video on chaAt() function:
+Helpful video on charAt() function:
 https://www.youtube.com/watch?v=aIL84wqsJlc&ab_channel=Pirple
 
 For Loops:
@@ -65,6 +65,8 @@ owasp special characters guide:
 https://owasp.org/www-community/password-special-characters
 
 Learning-
+<br>
+
 https://teamtreehouse.com/home
 
 https://app.pluralsight.com/library/
