@@ -11,7 +11,7 @@
 <br></br>
 
 ## Link:
-<a href="https://mbenson025.github.io/password-generator/Password">Password Generator</a>
+<a href="https://mbenson025.github.io/password-generator">Password Generator</a>
 
 
 <h2>Screenshot:</h2>
