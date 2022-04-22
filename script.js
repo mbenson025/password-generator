@@ -38,7 +38,6 @@ function generatePassword() {
     if (passLength < 8 || passLength > 128) {
 
         alert('Password must be between 8 and 128 characters');
-      // generatePassword(); -->I found this annoying as a user choice(unable to close out of box)
         return passLength;
     } 
 
@@ -76,7 +75,7 @@ function generatePassword() {
 
             }
           }
-            //new index is created after any of the 4 combined
+
 
 
 
@@ -91,7 +90,6 @@ for (var i = 0; i < passLength; i++ ) {
   console.log(passFinish)
     }
 
-    // debugger;
 
     //final password solution output
     return passFinish;
