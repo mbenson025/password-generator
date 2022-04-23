@@ -13,7 +13,7 @@ var charNumbers = "0123456789";
 var charSpecials = "!#$%&()*+-:;^_|`',./{}=<>?@~";
 var passReqs = "";
 var passLength = 0;
-var passFinish = "";
+
 
 //keeping array version here to easily switch back from string version
 // var charCaps = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"  ];
@@ -33,6 +33,7 @@ passwordText.value = password;
 
 
 function generatePassword() {
+    var passFinish = "";
     //user defines password length
     var passLength = prompt("How long would you like your password to be?");
     if (passLength < 8 || passLength > 128) {
